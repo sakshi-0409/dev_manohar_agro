@@ -8,7 +8,7 @@ use App\Http\Requests\MassDestroyProductCategoryRequest;
 use App\Http\Requests\StoreProductCategoryRequest;
 use App\Http\Requests\UpdateProductCategoryRequest;
 use App\Models\ProductCategory;
-use Gate;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Http\Request;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use Symfony\Component\HttpFoundation\Response;
@@ -35,6 +35,13 @@ class ProductCategoryController extends Controller
 
     public function store(StoreProductCategoryRequest $request)
     {
+        // if (extension_loaded('gd') && function_exists('gd_info')) {
+        //     echo "GD Library is enabled";
+        //     dd(' done');
+        // } else {
+        //     echo "GD Library is not enabled";
+        //     dd(' not done');
+        // };
         $productCategory = ProductCategory::create($request->all());
 
         if ($request->input('photo', false)) {

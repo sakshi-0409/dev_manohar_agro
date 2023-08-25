@@ -53,9 +53,9 @@
                     </div>
                     <div class="our-link">
                         <ul>
-                            <li><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
+                            <li><a href="{{ route('my-account') }}"><i class="fa fa-user s_color"></i> My Account</a></li>
                             <li><a href="#"><i class="fas fa-location-arrow"></i> Our location</a></li>
-                            <li><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                            <li><a href="{{ route('contact-us') }}"><i class="fas fa-headset"></i> Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+                    <a class="navbar-brand" href="{{ route('index') }}"><img src="{{asset('images/logo.png')}}" class="logo" alt=""></a>
                 </div>
                 <!-- End Header Navigation -->
 
@@ -386,7 +386,7 @@
     <script src="{{asset('js/jquery.superslides.min.js')}}"></script>
     <script src="{{asset('js/bootstrap-select.js')}}"></script>
     <script src="{{asset('js/inewsticker.js')}}"></script>
-    <script src="{{asset('js/bootsnav.js.')}}"></script>
+    <script src="{{asset('js/bootsnav.js')}}"></script>
     <script src="{{asset('js/images-loded.min.js')}}"></script>
     <script src="{{asset('js/isotope.min.js')}}"></script>
     <script src="{{asset('js/owl.carousel.min.js')}}"></script>
