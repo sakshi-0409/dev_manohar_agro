@@ -3,10 +3,11 @@
  <!-- Start Slider -->
  <div id="slides-shop" class="cover-slides">
     <ul class="slides-container">
-        <?php $productCategorys = App\Models\ProductCategory::all() ?>
+        <?php $productCategorys = App\Models\ProductCategory::all();;
+        ?>
         @foreach ($productCategorys as $productCategory)
         <li class="text-center">
-            <img src="{{ $productCategory->photo->getUrl('thumb') }}" alt="">
+            <img src="{{ $productCategory->photo->getUrl() }}" alt="">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -30,24 +31,15 @@
 <div class="categories-shop">
     <div class="container">
         <div class="row">
+            <?php $productCategorys = App\Models\ProductCategory::all(); ?>
+            @foreach ( $productCategorys as $productCategory )
             <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('images/categories_img_01.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+                    <img class="img-fluid" src="{{ $productCategory->photo->getUrl('') }}" alt="" />
+                    <a class="btn hvr-hover" href="#">{{ $productCategory->name }}</a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('images/categories_img_02.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <div class="shop-cat-box">
-                    <img class="img-fluid" src="{{asset('images/categories_img_03.jpg')}}" alt="" />
-                    <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </div>
