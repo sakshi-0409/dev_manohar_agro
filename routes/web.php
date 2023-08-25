@@ -52,3 +52,14 @@ Route::group(['prefix' => 'profile', 'as' => 'profile.', 'namespace' => 'Auth', 
         Route::post('profile/destroy', 'ChangePasswordController@destroy')->name('password.destroyProfile');
     }
 });
+
+Route::get('/index','mainController@index')->name('index');
+Route::get('/about','mainController@about')->name('about');
+Route::get('/shop','mainController@shop')->name('shop');
+Route::get('/gallery','mainController@gallery')->name('gallery');
+Route::get('/contact-us','mainController@contact_us')->name('contact-us');
+Route::get('/cart','mainController@cart')->name('cart');
+Route::get('my-account','mainController@my_account')->name('my-account');
+Route::get('shop-detail','mainController@shop_detail')->name('shop-detail');
+Route::get('wishlist','mainController@wishlist')->name('wishlist');
+Route::get('checkout','mainController@checkout')->name('checkout');
